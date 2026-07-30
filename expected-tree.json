@@ -1,0 +1,83 @@
+{
+  "generated_at": "2026-07-30T00:00:00Z",
+  "packages": {
+    "@esbuild/linux-x64": {
+      "dependencies": [],
+      "group": "main",
+      "optional": true,
+      "source": "registry",
+      "source_detail": {
+        "integrity": "sha512-ExjZQJFkMuCoSVPzuMBTlkl4cFEMjwHXEOC7eMNmxXfGFsm02s3SuNuSBHlO1MJIDxuiZxmIi5kO8WTuUr9g==",
+        "lockfile_version": "9.0",
+        "platform_cpu": ["x64"],
+        "platform_libc": ["glibc"],
+        "platform_os": ["linux"]
+      },
+      "version": "0.21.5"
+    },
+    "esbuild": {
+      "dependencies": [
+        "@esbuild/linux-x64"
+      ],
+      "group": "main",
+      "optional": false,
+      "source": "registry",
+      "source_detail": {
+        "integrity": "sha512-mg3OPMV4hXywwpoDxu3Qda5xCKQi+vCTZq8S9J/EpkhB2HzKXq4SNFZE3+NK93JYxc8VMSep+lOUSC/RVKaBQ==",
+        "lockfile_version": "9.0"
+      },
+      "version": "0.21.5"
+    },
+    "hono": {
+      "dependencies": [],
+      "group": "main",
+      "optional": false,
+      "source": "registry",
+      "source_detail": {
+        "integrity": "sha512-0QZ4G0p02u6oCRGAb28NeNOr4tg3oQFuEZqGiJqbLPCbhNj7JVz7ieMxIoIcMBjIpHXUwmkMtEuPBEJt39p3A==",
+        "lockfile_version": "9.0"
+      },
+      "version": "4.4.0"
+    },
+    "zod": {
+      "dependencies": [],
+      "group": "main",
+      "optional": false,
+      "source": "registry",
+      "source_detail": {
+        "integrity": "sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0ggOGBv1p8L7RLMQ9GkSl0SLMT38HOVy5xKq2EzNdF4Q==",
+        "lockfile_version": "9.0"
+      },
+      "version": "3.23.8"
+    }
+  },
+  "pm": "pnpm",
+  "pm_version_tested": "9",
+  "project_metadata": {
+    "groups": ["main"],
+    "optional_groups": [],
+    "probe_categories": ["lockfile_format", "install_command"],
+    "probe_notes": [
+      "pm_version_under_test: 12.0.0-beta.2 (pnpm 12 Beta 2 — stored here because schema_version is 1.0; upgrade to 1.2 to use the dedicated top-level field).",
+      "fsevents is declared in package.json optionalDependencies but is absent from the lockfile because pnpm 12.0.0-beta.2 filters platform-nonmatching optionals at install time (macOS-only package excluded on linux/x64).",
+      "Only @esbuild/linux-x64 is present among esbuild platform binaries; darwin-arm64, win32-x64 and others are absent from the lockfile (platform-filtered by pnpm 12 install_command behavior).",
+      "lockfile_format: pnpm 12 would silently rewrite a corrupted lockfile rather than aborting; this lockfile is structurally valid and uses lockfileVersion 9.0.",
+      "probe_platform: linux/x64/glibc"
+    ]
+  },
+  "root": {
+    "dependencies": [
+      "esbuild",
+      "hono",
+      "zod"
+    ],
+    "name": "pnpm12-platform-filtered-optionals",
+    "version": "1.0.0"
+  },
+  "schema_version": "1.0",
+  "source_file": "pnpm-lock.yaml",
+  "warnings": [
+    "fsevents not in expected tree: pnpm 12 platform-filtered it from the lockfile on linux/x64 (macOS-only optional dep). If Mend reports fsevents, it is reading package.json optionalDependencies instead of the lockfile.",
+    "All non-linux esbuild platform binaries absent from lockfile (platform-filtered). If Mend reports @esbuild/darwin-arm64 or @esbuild/win32-x64, it is supplementing the lockfile from the registry."
+  ]
+}
